@@ -1,0 +1,123 @@
+*, *::before, *::after{
+    box-sizing:border-box;
+    font-family:Arial, Helvetica, sans-serif;
+    font-weight:normal;
+}
+/* body spalva*/
+body{
+    padding:0;
+    margin:0;
+    background:linear-gradient(to right, rgb(107, 85, 64), rgb(196, 170, 144));
+}
+/*skaiciuotuvo tvarka, gridas*/
+.skaiciuotuvas-grid{
+    display: grid;
+    justify-content:center;
+    align-content:center;
+    min-height:100vh;/* kad visada apimtu 100% matomumo, vh = viewheight*/
+    grid-template-columns: repeat(5, 100px);/*nustato stulpeliu kieki ir ploti*/
+    grid-template-rows: minmax(130px, auto) repeat(5, 100px);/*nustato minimalu eiluciu dydi ir leidzia jam 
+    kisti kiek reikia, nes ekranas dideja nuo to kiek skaiciu irasysim, nustato eiluciu kieki ir dydi*/
+}
+/*manipuliuoja mygtukus esancius skaiciuotuvo viduj*/
+.skaiciuotuvas-grid > button{
+ cursor: pointer;
+ font-size: 2rem;
+ border:1px solid rgba(255, 255, 255, .70);
+ outline: none;
+ background-color:rgb(255, 255, 255, 0.5)
+}
+.skaiciuotuvas-grid .skaicius{
+    background-color:rgb(255, 255, 255, 0.3)
+}
+.skaiciuotuvas-grid .special{
+    background-color:rgb(255, 255, 255, 0.01)
+}
+.skaiciuotuvas-grid .special2{
+    background-color:rgb(0, 0, 0, 0.5);
+    color:white;
+}
+.skaiciuotuvas-grid > button:hover{
+    background-color: rgba(255,255,255,.80);
+}
+/*AC ir = stilius*/
+.span-two{
+grid-column: span 2;
+
+}
+/*ekrano stilius*/
+.output{
+grid-column: 1 / -1;/*kad ekranas eitu nuo pirmo iki paskutinio stulpelio*/
+background-color:rgb(0, 0, 0, .75);
+display: flex;
+align-items: flex-end;/*kad butu aligned apacioj*/
+justify-content: space-around;/*kad eitu per visa ekrana pasidalines tekstas bet arciau vienas kito ir toliau nuo krastu*/
+flex-direction:column;/*kad lygiuotusi vertikaliai o ne horizontaliai*/
+padding: 10px;/*kad atitraukt is sonu*/
+word-wrap: break-word;/*kad luztu stringas kai nebetelpa*/
+word-break: break-all;/*kad visi luztu*/
+}
+/*ankstesnes ivesties ekrane stilius*/
+.output .prev-operand{
+color: rgba(255, 255, 255, .70);
+font-size:1.5rem;
+}
+/*dabartines ivesties ekrane stilius*/
+.output .curr-operand{
+    color: white;
+    font-size:2.5rem;
+    }
+
+@media screen and (min-width: 0px) and (max-width: 400px){
+    .skaiciuotuvas-grid{
+        min-height:100vh;/* kad visada apimtu 100% matomumo, vh = viewheight*/
+        grid-template-columns: repeat(5, 50px);/*nustato stulpeliu kieki ir ploti*/
+        grid-template-rows: minmax(100px, auto) repeat(5, 50px);
+    }
+    .skaiciuotuvas-grid > button{
+        font-size: 1rem;
+       }
+
+    .output .prev-operand{
+         font-size:1rem;
+    }
+    .output .curr-operand{
+        font-size:2rem;
+        }
+}
+@media screen and (min-width: 401px) and (max-width: 900px){
+    .skaiciuotuvas-grid{
+        min-height:100vh;/* kad visada apimtu 100% matomumo, vh = viewheight*/
+        grid-template-columns: repeat(5, 70px);/*nustato stulpeliu kieki ir ploti*/
+        grid-template-rows: minmax(100px, auto) repeat(5, 70px);
+    }
+    .skaiciuotuvas-grid > button{
+        font-size: 1.5rem;
+       }
+
+    .output .prev-operand{
+         font-size:1.5rem;
+    }
+    .output .curr-operand{
+        font-size:2rem;
+        }
+}
+
+
+@media screen and (min-width: 2560px){
+    .skaiciuotuvas-grid{
+        min-height:100vh;/* kad visada apimtu 100% matomumo, vh = viewheight*/
+        grid-template-columns: repeat(5, 250px);/*nustato stulpeliu kieki ir ploti*/
+        grid-template-rows: minmax(310px, auto) repeat(5, 250px);
+    }
+    .skaiciuotuvas-grid > button{
+        font-size: 5rem;
+       }
+
+    .output .prev-operand{
+         font-size:5rem;
+    }
+    .output .curr-operand{
+        font-size:7rem;
+        }
+}
