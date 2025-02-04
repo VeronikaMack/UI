@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>zaidimas</title>
+<link rel="stylesheet" href="style.css">
+<script src="script.js" defer></script>
+</head>
+<body>
+<header>
+<h2>Memory Game</h2>
+</header>
+<main>
+    <div class="registration">
+        <input type="text" id="user" placeholder="Enter username">
+        <button class="register"onclick = "registerUser()">Register</button>
+    </div>
+    <div class="moves"id="movesCountDisplay">Moves: 0</div>
+    <div class="flex-container">
+        <div class="rules"><h2>RULES</h2><p>Press on tiles and find matching pictures. Find all matching pictures to win!<br>Side note:<br>If you want to see your progress on the leaderboard, you need to press 'register' every time before playing, even if you didn't change the username.</p></div>
+    <div class="grid-container"></div>
+    <div class="leaderboard" id="leaderboard">
+        <h2>LEADERBOARD</h2>
+        <ol id="leaderboard-list">
+
+        </ol>
+    </div>
+    </div>
+    <button class="restart" onclick = "restart()">RESTART</button>
+
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <p id="winMessage"></p>
+        </div>
+    </div>
+
+   
+</main>
+</body>
+</html>

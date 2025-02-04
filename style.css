@@ -1,0 +1,393 @@
+*{
+    font-family: monospace;
+}
+
+body{
+    background-color: rgb(130, 169, 130);
+    margin: 0;
+    text-align:center;
+}
+
+.flex-container{
+    display:flex;
+}
+
+header h2{
+    font-size: 3rem;
+    text-align: center;
+    color: rgb(0, 97, 0);
+}
+
+.grid-container{
+    text-align:center;
+    margin: 2% auto; 
+    width: max-content;
+    display: grid;
+    grid-template-columns: repeat(5, 100px);
+    gap: 16px;
+}
+
+.img-box{
+    height: 100px; /* kaip ir grid-template-columns */
+    background: rgb(0, 63, 0);
+    cursor: pointer;
+}
+img{
+    width:100px;
+    height:100px;
+}
+.restart{
+    cursor: pointer;
+    width: 10%;
+    text-align: center;
+    border: none;
+    height:30px;
+    border-radius: 5px;
+    background-color:rgb(0, 97, 0);
+    color: rgb(0, 27, 0);
+    font-size:large;
+    font-weight: 600;
+    align-self:auto;
+    
+}
+
+.moves{
+    font-size: 1.2rem;
+    margin-top:20px
+}
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-content {
+    background-color: #57e97a;
+    margin: 20% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    text-align: center;
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover {
+    color: black;
+    cursor: pointer;
+}
+
+.registration input{
+    border: none;
+    outline: none;
+    background-color: transparent;
+    border-bottom: 1px solid rgb(0, 27, 0);
+    
+}
+.registration input::placeholder {
+    color: rgb(0, 63, 0); /* Change the placeholder text color as needed */
+  }
+
+.registration button{
+    border:none;
+    outline: none;
+    background-color:rgb(0, 63, 0);
+    color: white;
+    padding: 5px;
+}
+
+.leaderboard{
+    text-align: left;
+    background-color:rgb(0, 97, 0);
+    width: 300px;
+    height: 500px;
+    margin:0.5% auto;
+}
+
+.leaderboard h2{
+    text-align:center;
+    color: rgb(0, 27, 0);
+}
+.leaderboard li{
+    color:rgb(0, 27, 0);
+    text-align:center;
+}
+.rules{
+    text-align: right;
+    background-color:rgb(0, 97, 0);
+    width: 300px;
+    height: 200px;
+    margin:0.5% auto;
+}
+.rules p{
+    text-align:center;
+    color: rgb(0, 27, 0);
+}
+.rules h2{
+    text-align:center;
+    color: rgb(0, 27, 0);
+}
+
+
+
+@media screen and (min-width: 0px) and (max-width: 400px){
+    .grid-container{
+        margin: 0.5% auto; 
+        grid-template-columns: repeat(4, 50px);
+        gap: 3px;
+    }
+    .img-box{
+        height: 50px; /* kaip ir grid-template-columns */
+    }
+    img{
+        width:50px;
+        height:50px;
+    }
+    .restart{
+        width: 30%;
+        height:30px;
+        margin-bottom: 10px;
+        margin-top:10px;
+    }
+
+    .flex-container{
+       display:block;
+    }
+    .leaderboard{
+        text-align: center;
+        width: 200px;
+        height: 300px;
+        margin:0.5% auto;
+    }
+        .rules{
+        text-align: center;
+        align-self: center;
+        width: 200px;
+        height: 230px;
+        margin:0.5% auto;
+        margin-bottom:5px;
+        }
+        .registration button{
+           margin-top:5px;
+        }
+
+    }
+    @media screen and (min-width: 401px) and (max-width: 600px){
+        .grid-container{
+            margin: 0.5% auto; 
+            grid-template-columns: repeat(5, 70px);
+            gap: 5px;
+          
+        }
+        .img-box{
+            height: 70px; /* kaip ir grid-template-columns */
+        }
+        img{
+            width:70px;
+            height:70px;
+        }
+        .restart{
+            width: 30%;
+            height:30px;
+            margin-bottom: 10px;
+            margin-top:10px;
+        }
+    
+        .flex-container{
+           display:block;
+        }
+        .leaderboard{
+            text-align: center;
+            width: 320px;
+            height: 300px;
+            margin:0.5% auto;
+        }
+            .rules{
+            text-align: center;
+            align-self: center;
+            width: 320px;
+            height: 170px;
+            margin:0.5% auto;
+            margin-bottom:5px;
+            }
+            .registration button{
+               margin-top:5px;
+            }
+    }
+    
+    
+    
+    @media screen and (min-width: 601px) and (max-width: 900px){
+        .grid-container{
+            margin: 0.5% auto; 
+            grid-template-columns: repeat(5, 100px);
+            gap: 5px;
+          
+        }
+        .img-box{
+            height: 100px; /* kaip ir grid-template-columns */
+        }
+        img{
+            width:100px;
+            height:100px;
+        }
+        .restart{
+            width: 20%;
+            height:30px;
+            margin-bottom: 10px;
+            margin-top:10px;
+        }
+    
+        .flex-container{
+           display:block;
+        }
+        .leaderboard{
+            text-align: center;
+            width: 500px;
+            height: 300px;
+            margin:0.5% auto;
+        }
+            .rules{
+            text-align: center;
+            align-self: center;
+            width: 500px;
+            height: 150px;
+            margin:0.5% auto;
+            margin-bottom:5px;
+            }
+            .registration button{
+               margin-top:5px;
+            }
+    }
+    
+    
+    @media screen and (min-width: 1500px) and (max-width: 2001px){
+        .moves{
+            font-size: 2rem;
+            margin-top:20px
+        }
+        .registration input{
+            font-size:2rem;
+        }
+        header h2{
+            font-size: 4rem;
+        }
+        .grid-container{
+            margin: 0.5% auto; 
+            grid-template-columns: repeat(5, 150px);
+            gap: 5px;
+          
+        }
+        .img-box{
+            height: 150px; /* kaip ir grid-template-columns */
+        }
+        img{
+            width:150px;
+            height:150px;
+        }
+        .restart{
+            width: 20%;
+            height:40px;
+            margin-bottom: 10px;
+            margin-top:10px;
+            font-size:2rem;
+        }
+        .leaderboard{
+            text-align: center;
+            width: 300px;
+            height: 600px;
+            margin:0.5% auto;
+            font-size: 2rem;
+        }
+            .rules{
+            text-align: center;
+            align-self: center;
+            width: 300px;
+            height: 600px;
+            margin:0.5% auto;
+            margin-bottom:5px;
+            font-size:2rem;
+            }
+            .registration button{
+               margin-top:5px;
+               width:200px;
+               font-size:2rem;
+            }
+            .modal-content {
+               font-size:2rem;
+            }
+            
+            .close {
+                font-size: 70px;
+            }
+    }
+    @media screen and (min-width: 2002px){
+        .moves{
+            font-size: 2rem;
+            margin-top:20px
+        }
+        .registration input{
+            font-size:2rem;
+        }
+        header h2{
+            font-size: 4rem;
+        }
+        .grid-container{
+            margin: 0.5% auto; 
+            grid-template-columns: repeat(5, 150px);
+            gap: 5px;
+          
+        }
+        .img-box{
+            height: 150px; /* kaip ir grid-template-columns */
+        }
+        img{
+            width:150px;
+            height:150px;
+        }
+        .restart{
+            width: 20%;
+            height:40px;
+            margin-bottom: 10px;
+            margin-top:10px;
+            font-size:2rem;
+        }
+        .leaderboard{
+            text-align: center;
+            width: 400px;
+            height: 600px;
+            margin:0.5% auto;
+            font-size: 2rem;
+        }
+            .rules{
+            text-align: center;
+            align-self: center;
+            width: 400px;
+            height: 600px;
+            margin:0.5% auto;
+            margin-bottom:5px;
+            font-size:2rem;
+            }
+            .registration button{
+               margin-top:5px;
+               width:200px;
+               font-size:2rem;
+            }
+            .modal-content {
+                font-size:2rem;
+             }
+             
+             .close {
+                 font-size: 70px;
+             }
+    }
+    
