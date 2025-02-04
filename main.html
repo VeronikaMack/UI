@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>form</title>
+<link rel="stylesheet" href="style.css">
+<script src="script.js" defer></script>
+</head>
+<body>
+<header>
+
+</header>
+<main>
+<div class="container">
+  <form id="form1">
+    <h2 class="form-pavadinimas">PAGRINDINĖ INFORMACIJA</h2>
+    
+    <p>Lytis: </p>
+    <select id="lytis" required>
+        <option value="vyras">Vyras</option>
+        <option value="moteris">Moteris</option>
+    </select>
+
+   <div class="input-container">
+    <input id="vardas"type="text" placeholder="Vardas*" required>
+    <input id = "antrasis_vardas" type="text" placeholder="Antrasis vardas">
+    <input id="Pavarde"type="text" placeholder="Pavardė*"required>
+   </div>
+
+     <div class="button-box">
+     <button type="button" id="toliau1" onclick="validateForm('form1')">Toliau</button>
+     </div>
+    </form>
+
+    <form id="form2">
+        <h2 class="form-pavadinimas">PAPILDOMA INFORMACIJA</h2>
+        <div class="input-container">
+        <p>Gimimo data: *</p>
+        <input type="date" id="gimimo_data"onchange="vedybinePadetis()" required>
+        <p>Asmens kodas: *</p>
+        <input type="text" id="asmens_kodas" placeholder="-"required>
+        <p>Telefono nr: *</p>
+        <input id="phone" type="tel" required>
+        <input id="pastas"type="text" placeholder="el. pašto adresas*" required>
+    </div>
+         <div class="button-box">
+            <button type="button" id="atgal1" onclick="backbutton('form2')">Atgal</button>
+            <button type="button" id="toliau2" onclick="validateForm('form2')">Toliau</button>
+         </div>
+    </form>
+
+    <form id="form3">
+        <h2 class="form-pavadinimas">PAPILDOMA INFORMACIJA</h2>
+        <p>Išsilavinimas*: </p>
+        <div class="input-container">
+        <select id="issilavinimas" name="issilavinimas" onchange="toggleQuestions();updateDegreeOptions()">
+            <option value="-"selected disabled >-</option>
+            <option value="pagrindinis">Pagrindinis</option>
+            <option value="vidurinis">Vidurinis</option>
+            <option value="profesinis">Profesinis</option>
+            <option value="aukstasis_kolegijinis">Aukštasis-kolegijinis</option>
+            <option value="aukstasis_universitetinis">Aukštasis-universitetinis</option>
+          </select>
+          <div class="hidden" id="issilavinimo_kl">
+           <input id="mokslo_istaiga"type="text" placeholder="Paskutinė užbaigta mokslo/studijų įstaiga*" required>
+           <input id="uzbaigimo_metai"type="text" placeholder="Užbaigimo metai*" required>
+           <input id="kvalifikacija"type="text" placeholder="Kvalifikacija">
+          </div>
+           </div>
+
+          <div class="hidden2" id="laipsnio_kl">
+           <p>Mokslo laipsnis: </p>
+           <select id="mokslo_laipsnis" name="mokslo_laipsnis">
+            <option value="-">-</option>
+          </select>
+           </div>
+         <div class="button-box">
+            <button type="button" id="atgal2"onclick="backbutton('form3')">Atgal</button>
+            <button type="button" id="toliau3"onclick="validateForm('form3')">Toliau</button>
+         </div>
+    </form>
+    <form id="form4">
+        <h2 class="form-pavadinimas">PAPILDOMA INFORMACIJA</h2>
+        <div class="input-container">
+        <p>Gyvenamoji vieta: *</p>
+        <input id="adresas"type="text" placeholder="Adresas" required>
+      
+        <p>Vedybinė padėtis: </p>
+        <select id="vedybine_padetis" name="vedybine_padetis" onchange = "sutuoktinis()">
+            <option value="-">-</option>
+           <option id = "nevedes"value="nevedęs/netekėjusi">Nevedęs/netekėjusi</option>
+            <option id = "vedes"value="vedęs/ištekėjusi">Vedęs/ištekėjusi</option>
+            <option id = "issiskyres" value="išsiskyręs(-usi)" >Išsiskyręs(-usi)</option>
+       
+          </select>
+      
+       <div class="hidden" id="sutuoktinis">
+       <input type="text" id="sutuoktinis_vardas" placeholder="Sutuoktinio(-ės) vardas*" required> 
+       <input type="text" id="sutuoktinis_pavarde" placeholder="Sutuoktinio(-ės) pavardė*" required> 
+       </div>
+     </div>
+       <div class="button-box">
+        <button type="button" id="atgal3"onclick="backbutton('form4')">Atgal</button>
+        <button type="button" id="toliau4" onclick="validateForm('form4')">Toliau</button>
+    </div>
+    </form>
+    <form id="form5">
+
+        <h2 class="form-pavadinimas">PAPILDOMA INFORMACIJA</h2>
+
+        <p>Profesinė padėtis: </p>
+        <select id="profesine_padetis" name="profesine_padetis" onchange="updateprofessionOptions()">
+            <option value="-">-</option>
+            <option value="studijuoja">Studijuoja</option>
+            <option value="dirba">Dirba</option>
+            <option value="nedirba">Nedirba</option>
+            <option value="atostogos">Motinystės/tėvystės atostogose</option>
+        </select>
+        <div class="input-container">
+        <div id="studijuoja" class="hidden">
+            <input id="studiju_pakopa"type="text" placeholder="Studijų pakopa*" required>
+           <input id="kursas"type="text" placeholder="Kursas*" required>
+           <input id="studiju_istaiga"type="text" placeholder="Įstaiga*" required>
+           <input id="tiketini_baigimo_metai"type="text" placeholder="Tikėtini baigimo metai*" required>
+        </div>
+
+        <div id="dirba" class="hidden">
+            <input id="darbo_istaiga"type="text" placeholder="Darbo įstaiga*" required>
+            <input id="pareigos"type="text" placeholder="Pareigos*" required>
+        </div>
+
+        <div id="nedirba" class="hidden">
+            <input id="nedarbo_priezastis"type="text" placeholder="Nedarbo priežastis*" required>
+        </div>
+
+        <div id="atostogos" class="hidden">
+            <input id="atostogu_pabaiga" type="text" placeholder="Atostogų pabaiga*" required>
+        </div>
+
+        </div>
+        <div class="button-box">
+            <button type="button" id="atgal4"onclick="backbutton('form5')">Atgal</button>
+            <button type="button" id="toliau5"onclick="validateForm('form5')">Toliau</button> 
+        </div>
+
+    </form>
+    <form id="form6">
+        <h2 class="form-pavadinimas">PAPILDOMA INFORMACIJA</h2>
+        <p>Darbo patirtis(metais): </p>
+        <select id="numberChoice" onchange="updateSritisOptions()"></select>
+        <div class="input-container">
+        <div class="hidden" id="sritis">
+        <p>Darbo sritis: </p>
+        <select id="darbo_sritis" name="darbo sritis">
+            <option value="" disabled selected>-</option>
+            <option value="teisė">Teisė</option>
+            <option value="viešasis_sektorius">Viešasis sektorius</option>
+            <option value="sveikatos_apsauga">Sveikatos apsauga</option>
+            <option value="farmacija">Farmacija</option>
+            <option value="pramonė">Pramonė</option>
+            <option value="IT">IT</option>
+            <option value="prekyba">Prekyba</option>
+            <option value="krašto_apsauga">Krašto apsauga</option>
+            <option value="vidaus_reikalų_sistema">Vidaus reikalų sistema</option>
+            <option value="aptarnavimas">Klientų aptarnavimas ir paslaugos</option>
+            <option value="transportas">Transportas</option>
+            <option value="kultūra">Kultūra ir pramogos</option>
+            <option value="švietimas">Švietimas / studijos</option>
+          </select>
+        </div>
+        </div>
+        <div class="button-box">
+            <button type="button" id="atgal5"onclick="backbutton('form6')">Atgal</button>
+            <button type="button" id="submit" onclick="validateForm('form6');saugojimas()">Pateikti</button> 
+            </div>
+    </form>
+    <form id="form7">
+        <h2 class="form-pavadinimas">APKLAUSA PATEIKTA, AČIŪ UŽ DALYVAVIMĄ</h2>
+        
+        
+    </form>
+    <div class="step-row">
+        <div id="progress"></div>
+        <div class="step-col"><small>1</small></div>
+        <div class="step-col"><small>2</small></div>
+        <div class="step-col"><small>3</small></div>
+        <div class="step-col"><small>4</small></div>
+        <div class="step-col"><small>5</small></div>
+        <div class="step-col"><small>6</small></div>
+        <div class="step-col"><small>7</small></div>
+    </div>
+</div>    
+</main>
+</body>
+</html>
